@@ -17,7 +17,7 @@ func _process(delta):
 	fps.set_text("FPS : " + str(Engine.get_frames_per_second()))
 	if Input.is_action_just_pressed("ui_cancel"):
 		focus = !focus
-		get_tree().quit()
+		#get_tree().quit()
 	if !focus:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:

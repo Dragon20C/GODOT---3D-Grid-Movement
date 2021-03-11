@@ -16,30 +16,27 @@ func _ready():
 	destination = translation
 
 func _physics_process(delta):
-	translation = translation.move_toward(destination,speed * delta)
+	move(delta)
+	
+func move(time):
+	translation = translation.move_toward(destination,speed * time)
 	
 	if Input.is_action_pressed("up"):
 		next_pos = Vector3.FORWARD
 		current_dir = up
 		can_move = true
-		yield(get_tree().create_timer(0.18), "timeout")
 	if Input.is_action_pressed("down"):
 		next_pos = Vector3.BACK
 		current_dir = down
 		can_move = true
-		yield(get_tree().create_timer(0.18), "timeout")
 	if Input.is_action_pressed("left"):
 		next_pos = Vector3.LEFT
 		current_dir = left
 		can_move = true
-		yield(get_tree().create_timer(0.18), "timeout")
 	if Input.is_action_pressed("right"):
 		next_pos = Vector3.RIGHT
 		current_dir = right
 		can_move = true
-		yield(get_tree().create_timer(0.18), "timeout")
-		
 	if translation.distance_to(destination) <= 0.0000 and can_move:
-		destination = translation + (next_pos)
+		destination = translation + next_pos
 		can_move = false
-	print("translation :", str(translation), " destination :", destination)
