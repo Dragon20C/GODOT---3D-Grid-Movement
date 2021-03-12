@@ -15,13 +15,13 @@ albedo_color = Color( 0.0588235, 0.117647, 1, 1 )
 [node name="FakePlayer" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.49319, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="Arrow" type="MeshInstance" parent="MeshInstance"]
-transform = Transform( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, 0, 0.0151798, -1.74772 )
+[node name="Arrow" type="MeshInstance" parent="Mesh"]
+transform = Transform( -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 0, 0, 1, 0, -0.0802247, -1.74772 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
